@@ -59,7 +59,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Override
 	public Color getBackground(Object element) {
-		return Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
+		return null;// Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
 	}
 
 	@Override
