@@ -1,7 +1,12 @@
 package com.magellium.rental.ui.views;
 
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
 import com.magellium.rental.core.RentalCoreActivator;
@@ -27,6 +32,8 @@ public class RentalAgencyView extends ViewPart {
 		RentalAgency agencies[] = new RentalAgency[] {RentalCoreActivator.getAgency()};
 		treeViewer.setInput(agencies);
 		treeViewer.expandAll();
+		
+		getSite().setSelectionProvider(treeViewer);
 	}
 
 	@Override
