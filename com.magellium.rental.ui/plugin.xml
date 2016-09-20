@@ -22,5 +22,13 @@
             restorable="true">
       </view>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="perspective.RentalPerspective"
+            id="perspective.RentalPerspective"
+            name="Rental">
+      </perspective>
+   </extension>
 
 </plugin>
