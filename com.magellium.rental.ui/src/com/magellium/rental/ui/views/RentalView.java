@@ -3,6 +3,13 @@ package com.magellium.rental.ui.views;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceAdapter;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -14,7 +21,6 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
-import com.magellium.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
 
 public class RentalView extends ViewPart implements ISelectionListener {
@@ -65,6 +71,12 @@ public class RentalView extends ViewPart implements ISelectionListener {
 		labelDateTo = new Label(grpDatesDeLocation, SWT.NONE);
 		labelDateTo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
+		setLabelAsDragSource (label1);
+		setLabelAsDragSource (label2);
+		setLabelAsDragSource (label3);
+		setLabelAsDragSource (labelDateFrom);
+		setLabelAsDragSource (labelDateTo);
+		
 //		setRental (RentalCoreActivator.getAgency().getRentals().get(1));
 	}
 
@@ -102,6 +114,22 @@ public class RentalView extends ViewPart implements ISelectionListener {
 				setRental ((Rental)selected);
 			}
 		}
+	}
+	
+	public void setLabelAsDragSource(final Label label) {
+		
+		DragSource source = new DragSource(label, DND.DROP_MOVE | DND.DROP_COPY);
+		
+		source.setTransfer(new Transfer[] {TextTransfer.getInstance()});
+		
+		source.addDragListener(new DragSourceAdapter() {
+			@Override
+			public void dragSetData(DragSourceEvent event) {
+				if (TextTransfer.getInstance().isSupportedType(event.dataType)) {
+					event.data = label.getText();
+				}
+			}
+		});
 	}
 
 }
