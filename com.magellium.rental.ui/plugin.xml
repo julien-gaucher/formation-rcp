@@ -14,6 +14,13 @@
             name="Rental View"
             restorable="true">
       </view>
+      <view
+            category="com.magellium.rental.ui.category1"
+            class="com.magellium.rental.ui.views.RentalAgencyView"
+            id="com.magellium.rental.ui.view.rental.agency"
+            name="Rental Agency View"
+            restorable="true">
+      </view>
    </extension>
 
 </plugin>
