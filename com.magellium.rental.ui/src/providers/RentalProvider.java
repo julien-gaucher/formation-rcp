@@ -2,15 +2,19 @@ package providers;
 
 import java.text.SimpleDateFormat;
 
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider {
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
 
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -45,6 +49,16 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		}
 
 		return new Object[0];
+	}
+
+	@Override
+	public Color getForeground(Object element) {
+		return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
+	}
+
+	@Override
+	public Color getBackground(Object element) {
+		return Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
 	}
 
 	@Override
