@@ -44,5 +44,46 @@
             class="com.magellium.rental.ui.preferences.RentalPreferenceInitializer">
       </initializer>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.magellium.rental.ui.commands.helloworld"
+            name="Hello World">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.magellium.rental.ui.commands.HelloWorldHandler"
+            commandId="com.magellium.rental.ui.commands.helloworld">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:window?after=additions">
+         <command
+               commandId="com.magellium.rental.ui.commands.helloworld"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.views.ResourceNavigator?after=additions">
+         <command
+               commandId="com.magellium.rental.ui.commands.helloworld"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.magellium.rental.ui.view.rental.agency?after=additions">
+         <command
+               commandId="com.magellium.rental.ui.commands.helloworld"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
 
 </plugin>

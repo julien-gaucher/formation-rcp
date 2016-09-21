@@ -10,6 +10,7 @@ import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 
 import com.magellium.rental.ui.RentalUIActivator;
 import com.magellium.rental.ui.preferences.RentalPreferencePage;
@@ -133,6 +134,16 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		}
 
 		return super.getText(element);
+	}
+	
+	@Override
+	public Image getImage(Object element) {
+		
+		if (element instanceof RentalAgency) {
+			return RentalUIActivator.getDefault().getImageRegistry().get(RentalUIActivator.IMG_AGENCY);
+		}
+		
+		return null;
 	}
 
 	private class Node {
