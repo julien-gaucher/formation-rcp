@@ -30,5 +30,19 @@
             name="Rental">
       </perspective>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.magellium.rental.ui.preferences.RentalPreferencePage"
+            id="com.magellium.rental.ui.preferences"
+            name="Rental Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.magellium.rental.ui.preferences.RentalPreferenceInitializer">
+      </initializer>
+   </extension>
 
 </plugin>
