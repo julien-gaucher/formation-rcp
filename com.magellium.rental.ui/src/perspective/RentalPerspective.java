@@ -14,8 +14,9 @@ public class RentalPerspective implements IPerspectiveFactory {
 		addFastViews(layout);
 		addViewShortcuts(layout);
 		addPerspectiveShortcuts(layout);
-		layout.addView("com.magellium.rental.ui.view.rental", IPageLayout.LEFT, 0.5f, IPageLayout.ID_EDITOR_AREA);
-		layout.addView("com.magellium.rental.ui.view.rental.agency", IPageLayout.LEFT, 0.5f, "com.magellium.rental.ui.view.rental");
+		layout.addView("com.magellium.rental.ui.view.rental", IPageLayout.LEFT, 0.2f, IPageLayout.ID_EDITOR_AREA);
+		layout.addView("com.magellium.rental.ui.view.rental.agency", IPageLayout.LEFT, 0.6f, "com.magellium.rental.ui.view.rental");
+		layout.addView("com.magellium.rental.ui.view.customer", IPageLayout.LEFT, 0.2f, "com.magellium.rental.ui.view.rental");
 	}
 
 	/**

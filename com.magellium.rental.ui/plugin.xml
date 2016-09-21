@@ -21,6 +21,12 @@
             name="Rental Agency View"
             restorable="true">
       </view>
+      <view
+            class="com.magellium.rental.ui.views.CustomerView"
+            id="com.magellium.rental.ui.view.customer"
+            name="Customer View"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
