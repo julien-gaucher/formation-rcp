@@ -12,9 +12,12 @@ public class RentalPreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = RentalUIActivator.getDefault().getPreferenceStore();
+		
 		store.setDefault(RentalPreferencePage.FIELD_CUSTOMER, StringConverter.asString(new RGB (255, 0, 0)));
 		store.setDefault(RentalPreferencePage.FIELD_RENTAL, StringConverter.asString(new RGB (0, 255, 0)));
 		store.setDefault(RentalPreferencePage.FIELD_OBJECTS, StringConverter.asString(new RGB (0, 0, 255)));
+		
+		store.setDefault(PalettePreferencePage.FIELD_PALETTE, "com.magellium.rental.ui.palette.default");
 	}
 
 }
