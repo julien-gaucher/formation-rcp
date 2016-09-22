@@ -12,7 +12,9 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
+import com.magellium.rental.ui.PaletteDesc;
 import com.magellium.rental.ui.RentalUIActivator;
+import com.magellium.rental.ui.preferences.PalettePreferencePage;
 import com.magellium.rental.ui.preferences.RentalPreferencePage;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
@@ -85,20 +87,45 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 //			}
 //		}
 		
-		if (element instanceof Customer) {
-			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-		} else if (element instanceof Rental) {
-			return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-		} else if (element instanceof RentalObject) {
-			return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-		}
+//		if (element instanceof Customer) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
+//		} else if (element instanceof Rental) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
+//		} else if (element instanceof RentalObject) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
+//		}
+//		
+		PaletteDesc pdesc = RentalUIActivator.getDefault().getPaletteManager().get(store.getString(PalettePreferencePage.FIELD_PALETTE));
 
-		return null;
+		return pdesc.getProvider().getForeground(element);
 	}
 
 	@Override
 	public Color getBackground(Object element) {
-		return null;// Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
+		IPreferenceStore store = RentalUIActivator.getDefault().getPreferenceStore();
+
+//		if (element instanceof Node) {
+//			Node node = (Node) element;
+//			if (node.label == Node.CUSTOMERS) {
+//				return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
+//			} else if (node.label == Node.RENTALS) {
+//				return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
+//			} else if (node.label == Node.OBJECTS) {
+//				return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
+//			}
+//		}
+		
+//		if (element instanceof Customer) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
+//		} else if (element instanceof Rental) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
+//		} else if (element instanceof RentalObject) {
+//			return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
+//		}
+//		
+		PaletteDesc pdesc = RentalUIActivator.getDefault().getPaletteManager().get(store.getString(PalettePreferencePage.FIELD_PALETTE));
+
+		return pdesc.getProvider().getBackground(element);
 	}
 
 	@Override

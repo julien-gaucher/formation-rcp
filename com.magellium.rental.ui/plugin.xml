@@ -74,11 +74,14 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="menu:window?after=additions">
-         <command
-               commandId="com.magellium.rental.ui.commands.helloworld"
-               style="push">
-         </command>
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Mon menu">
+            <command
+                  commandId="com.magellium.rental.ui.commands.helloworld"
+                  style="push">
+            </command>
+         </menu>
       </menuContribution>
       <menuContribution
             allPopups="false"

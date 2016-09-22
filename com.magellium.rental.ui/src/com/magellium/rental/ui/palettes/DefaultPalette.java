@@ -35,17 +35,6 @@ public class DefaultPalette implements IColorProvider {
 	public Color getForeground(Object element) {
 
 		IPreferenceStore store = RentalUIActivator.getDefault().getPreferenceStore();
-
-//		if (element instanceof Node) {
-//			Node node = (Node) element;
-//			if (node.label == Node.CUSTOMERS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-//			} else if (node.label == Node.RENTALS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-//			} else if (node.label == Node.OBJECTS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-//			}
-//		}
 		
 		if (element instanceof Customer) {
 			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
