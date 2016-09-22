@@ -1,13 +1,13 @@
-package com.magellium.rental.ui.views;
+package com.magellium.rental.e4.views;
 
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
+import javax.annotation.PostConstruct;
+
+import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
 import org.eclipse.swt.dnd.DragSourceAdapter;
 import org.eclipse.swt.dnd.DragSourceEvent;
-import org.eclipse.swt.dnd.DragSourceListener;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.GridData;
@@ -15,18 +15,11 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Rental;
 
-/**
- *  @deprecated
- */
-public class RentalView extends ViewPart implements ISelectionListener {
+
+public class RentalView {
 	
 	private Label label1 = null;
 	private Label label2 = null;
@@ -38,7 +31,7 @@ public class RentalView extends ViewPart implements ISelectionListener {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+	@PostConstruct
 	public void createPartControl(Composite parent) {
 
 		parent.setLayout(new GridLayout(1, false));
@@ -83,7 +76,7 @@ public class RentalView extends ViewPart implements ISelectionListener {
 //		setRental (RentalCoreActivator.getAgency().getRentals().get(1));
 	}
 
-	@Override
+	@Focus
 	public void setFocus() {
 		// TODO Auto-generated method stub
 
@@ -96,28 +89,29 @@ public class RentalView extends ViewPart implements ISelectionListener {
 		labelDateTo.setText(r.getEndDate().toString());
 	}
 	
-	@Override
-	public void init(IViewSite site) throws PartInitException {
-		super.init(site);
-		site.getPage().addSelectionListener(this);
-	}
-	
-	@Override
-	public void dispose() {
-		getSite().getPage().removeSelectionListener(this);
-		super.dispose();
-	}
-
-	@Override
-	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if (selection instanceof IStructuredSelection) {
-			Object selected = ((IStructuredSelection) selection).getFirstElement();
-
-			if (selected instanceof Rental) {
-				setRental ((Rental)selected);
-			}
-		}
-	}
+	// E34 Gestion de la sélection
+//	@Override
+//	public void init(IViewSite site) throws PartInitException {
+//		super.init(site);
+//		site.getPage().addSelectionListener(this);
+//	}
+//	
+//	@Override
+//	public void dispose() {
+//		getSite().getPage().removeSelectionListener(this);
+//		super.dispose();
+//	}
+//
+//	@Override
+//	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+//		if (selection instanceof IStructuredSelection) {
+//			Object selected = ((IStructuredSelection) selection).getFirstElement();
+//
+//			if (selected instanceof Rental) {
+//				setRental ((Rental)selected);
+//			}
+//		}
+//	}
 	
 	public void setLabelAsDragSource(final Label label) {
 		

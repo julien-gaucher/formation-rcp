@@ -15,11 +15,9 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="com.magellium.rental.rcp.application"
-            name="Rental">
+            application="com.magellium.rental.rcp.application" name="Rental">
          <property
-               name="appName"
-               value="Rental">
+               name="appName" value="Rental">
          </property>
       </product>
    </extension>
