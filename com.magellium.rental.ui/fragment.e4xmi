@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_9aO_oIGNEeal9fnBjVavaA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_9aO_oYGNEeal9fnBjVavaA" featurename="addons" parentElementId="com.magellium.rental.eap.application">
+    <elements xsi:type="application:Addon" xmi:id="_9aO_ooGNEeal9fnBjVavaA" elementId="com.magellium.rental.eap.addon.rental" contributionURI="bundleclass://com.magellium.rental.ui/addons.RentalAddon"/>
+  </fragments>
+</fragment:ModelFragments>

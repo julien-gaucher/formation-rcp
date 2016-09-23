@@ -3,15 +3,27 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.window.main" label="Eclipse 4 RCP Application" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.perspective.sample">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partsashcontainer.sample" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_7xEd8IDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_8G6yIIDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalAgencyView" label="RentalAgencyView"/>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partsashcontainer.sample">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_uShjAIF0Eeal9fnBjVavaA" elementId="com.magellium.rental.eap.partsashcontainer.0" containerData="7000" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_7xEd8IDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.partstack.0" containerData="7000">
+              <children xsi:type="basic:Part" xmi:id="_8G6yIIDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalAgencyView" label="RentalAgencyView" iconURI="platform:/plugin/com.magellium.rental.ui/icons/Agency.png">
+                <menus xmi:id="_XF30MIGKEeal9fnBjVavaA" elementId="com.magellium.rental.eap.menu.0">
+                  <tags>ViewMenu</tags>
+                  <children xsi:type="menu:HandledMenuItem" xmi:id="_ZXZx8IGKEeal9fnBjVavaA" elementId="com.magellium.rental.eap.handledmenuitem.helloworld" label="Hello World " iconURI="platform:/plugin/com.magellium.rental.ui/icons/sample.gif" command="_ydEgwIGIEeal9fnBjVavaA"/>
+                </menus>
+                <menus xsi:type="menu:PopupMenu" xmi:id="_hW2UwIGKEeal9fnBjVavaA" elementId="com.magellium.rental.eap.popupmenu.helloWorld">
+                  <children xsi:type="menu:HandledMenuItem" xmi:id="_iJBYkIGKEeal9fnBjVavaA" elementId="com.magellium.rental.eap.handledmenuitem.helloworld" label="Hello World" iconURI="platform:/plugin/com.magellium.rental.ui/icons/sample.gif" command="_ydEgwIGIEeal9fnBjVavaA"/>
+                </menus>
+              </children>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partstack.sample" containerData="3000">
+              <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.part.sample" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalView" label="RentalView" iconURI="platform:/plugin/com.magellium.rental.ui/icons/Rentals.png"/>
+            </children>
           </children>
-          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partstack.sample">
-            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.part.sample" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalView" label="RentalView"/>
-          </children>
-          <children xsi:type="basic:PartStack" xmi:id="_z3hO4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.partstack.1">
-            <children xsi:type="basic:Part" xmi:id="_0d-K4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.part.customerview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.CustomerView" label="CustomerView"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_vSLCIIF0Eeal9fnBjVavaA" elementId="com.magellium.rental.eap.partsashcontainer.1" containerData="3000">
+            <children xsi:type="basic:PartStack" xmi:id="_z3hO4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.partstack.1">
+              <children xsi:type="basic:Part" xmi:id="_0d-K4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.part.customerview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.CustomerView" label="CustomerView" iconURI="platform:/plugin/com.magellium.rental.ui/icons/Customers.png"/>
+            </children>
           </children>
         </children>
       </children>
@@ -24,6 +36,8 @@
       </children>
       <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.handleditem.about" label="About" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_qNmIcIGJEeal9fnBjVavaA" elementId="com.magellium.rental.eap.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_sV1nUIGJEeal9fnBjVavaA" elementId="com.magellium.rental.eap.handledmenuitem.helloworld" label="Hello World" iconURI="platform:/plugin/com.magellium.rental.ui/icons/sample.gif" command="_ydEgwIGIEeal9fnBjVavaA"/>
       </children>
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.trimbar.top">
@@ -37,6 +51,7 @@
   <handlers xmi:id="_6wlLgcgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.handler.openCommand" contributionURI="bundleclass://com.magellium.rental.eap/com.magellium.rental.eap.handlers.OpenHandler" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLhMgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.handler.saveCommand" contributionURI="bundleclass://com.magellium.rental.eap/com.magellium.rental.eap.handlers.SaveHandler" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.handler.aboutCommand" contributionURI="bundleclass://com.magellium.rental.eap/com.magellium.rental.eap.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_43zvkIGIEeal9fnBjVavaA" elementId="com.magellium.rental.eap.handler.helloWorldCommand" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.commands.HelloWorldHandler" command="_ydEgwIGIEeal9fnBjVavaA"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.keybinding.m1q" keySequence="M1+Q" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.keybinding.m1o" keySequence="M1+O" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
@@ -51,6 +66,7 @@
   <commands xmi:id="_6wlLgMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
   <commands xmi:id="_6wlLg8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_6wlLhsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_ydEgwIGIEeal9fnBjVavaA" elementId="com.magellium.rental.eap.command.helloworld" commandName="helloWorldCommand"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -58,5 +74,4 @@
   <addons xmi:id="_6wlLdsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
-  <addons xmi:id="_sIhOwIFiEeal9fnBjVavaA" elementId="com.magellium.rental.eap.addon.rental" contributionURI="bundleclass://com.magellium.rental.ui/addons.RentalAddon"/>
 </application:Application>

@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -23,6 +24,9 @@ public class RentalAgencyView {
 	
 	@Inject
 	private ESelectionService selectionService;
+	
+	@Inject
+	private EMenuService menuService;
 
 	public RentalAgencyView() {
 		// TODO Auto-generated constructor stub
@@ -39,9 +43,6 @@ public class RentalAgencyView {
 		treeViewer.setInput(agencies);
 		treeViewer.expandAll();
 		
-		// E34 gestion de la sélection
-//		getSite().setSelectionProvider(treeViewer);
-		
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			
 			@Override
@@ -51,11 +52,7 @@ public class RentalAgencyView {
 			}
 		});
 		
-		// E34 gestion du popup
-//		MenuManager menuManager = new MenuManager ();
-//		Menu menu = menuManager.createContextMenu(treeViewer.getControl());
-//		treeViewer.getControl().setMenu(menu);
-//		getSite().registerContextMenu(menuManager, treeViewer);
+		menuService.registerContextMenu(treeViewer.getControl(), "com.magellium.rental.eap.popupmenu.helloWorld");
 	}
 
 	@Focus
