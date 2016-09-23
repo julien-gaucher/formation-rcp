@@ -15,7 +15,6 @@ import org.eclipse.swt.graphics.Image;
 import com.magellium.rental.ui.PaletteDesc;
 import com.magellium.rental.ui.RentalUIActivator;
 import com.magellium.rental.ui.preferences.PalettePreferencePage;
-import com.magellium.rental.ui.preferences.RentalPreferencePage;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -58,42 +57,11 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		// ciomment
 		return new Object[0];
 	}
-	
-	private Color getAColor(String rgbKey) {
-		
-		ColorRegistry registry = JFaceResources.getColorRegistry();
-		
-		Color col = registry.get(rgbKey);
-		if (col == null) {
-			registry.put(rgbKey, StringConverter.asRGB(rgbKey));
-			col = registry.get(rgbKey);
-		}
-		return col;
-	}
 
 	@Override
 	public Color getForeground(Object element) {
 
 		IPreferenceStore store = RentalUIActivator.getDefault().getPreferenceStore();
-
-//		if (element instanceof Node) {
-//			Node node = (Node) element;
-//			if (node.label == Node.CUSTOMERS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-//			} else if (node.label == Node.RENTALS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-//			} else if (node.label == Node.OBJECTS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-//			}
-//		}
-		
-//		if (element instanceof Customer) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-//		} else if (element instanceof Rental) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-//		} else if (element instanceof RentalObject) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-//		}
 //		
 		PaletteDesc pdesc = RentalUIActivator.getDefault().getPaletteManager().get(store.getString(PalettePreferencePage.FIELD_PALETTE));
 
@@ -104,25 +72,6 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	public Color getBackground(Object element) {
 		IPreferenceStore store = RentalUIActivator.getDefault().getPreferenceStore();
 
-//		if (element instanceof Node) {
-//			Node node = (Node) element;
-//			if (node.label == Node.CUSTOMERS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-//			} else if (node.label == Node.RENTALS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-//			} else if (node.label == Node.OBJECTS) {
-//				return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-//			}
-//		}
-		
-//		if (element instanceof Customer) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_CUSTOMER));
-//		} else if (element instanceof Rental) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_RENTAL));
-//		} else if (element instanceof RentalObject) {
-//			return getAColor (store.getString(RentalPreferencePage.FIELD_OBJECTS));
-//		}
-//		
 		PaletteDesc pdesc = RentalUIActivator.getDefault().getPaletteManager().get(store.getString(PalettePreferencePage.FIELD_PALETTE));
 
 		return pdesc.getProvider().getBackground(element);

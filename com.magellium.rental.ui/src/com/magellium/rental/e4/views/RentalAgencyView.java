@@ -60,23 +60,4 @@ public class RentalAgencyView {
 		// TODO Auto-generated method stub
 
 	}
-	
-	// E34
-//	@Override
-//	public void init(IViewSite site) throws PartInitException {
-//		super.init(site);
-//		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
-//	}
-//	
-//	@Override
-//	public void dispose() {
-//		RentalUIActivator.getDefault().getPreferenceStore().removePropertyChangeListener(this);
-//		super.dispose();
-//	}
-//
-//	@Override
-//	public void propertyChange(PropertyChangeEvent event) {
-//		treeViewer.refresh();
-//	}
-
 }
