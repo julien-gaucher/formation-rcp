@@ -16,6 +16,9 @@ import com.opcoach.training.rental.RentalAgency;
 
 import providers.RentalProvider;
 
+/**
+ *  @deprecated
+ */
 public class RentalAgencyView extends ViewPart implements IPropertyChangeListener {
 	
 	protected RentalProvider provider = new RentalProvider ();

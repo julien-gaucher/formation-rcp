@@ -3,9 +3,15 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.window.main" label="Eclipse 4 RCP Application" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.perspective.sample">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partsashcontainer.sample">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partsashcontainer.sample" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_7xEd8IDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_8G6yIIDTEeah8dy8OrVGwA" elementId="com.magellium.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalAgencyView" label="RentalAgencyView"/>
+          </children>
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.partstack.sample">
-            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.part.sample" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalView" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.magellium.rental.eap.part.sample" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.RentalView" label="RentalView"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_z3hO4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.partstack.1">
+            <children xsi:type="basic:Part" xmi:id="_0d-K4IFvEeal9fnBjVavaA" elementId="com.magellium.rental.eap.part.customerview" contributionURI="bundleclass://com.magellium.rental.ui/com.magellium.rental.e4.views.CustomerView" label="CustomerView"/>
           </children>
         </children>
       </children>
@@ -52,4 +58,5 @@
   <addons xmi:id="_6wlLdsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_sIhOwIFiEeal9fnBjVavaA" elementId="com.magellium.rental.eap.addon.rental" contributionURI="bundleclass://com.magellium.rental.ui/addons.RentalAddon"/>
 </application:Application>

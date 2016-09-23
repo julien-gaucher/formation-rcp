@@ -16,6 +16,9 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Customer;
 
+/**
+ *  @deprecated
+ */
 public class CustomerView extends ViewPart implements ISelectionListener {
 	
 	private Label label1 = null;

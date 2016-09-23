@@ -1,8 +1,12 @@
 package com.magellium.rental.e4.views;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -17,6 +21,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 
 
 public class RentalView {
@@ -30,6 +35,9 @@ public class RentalView {
 	public RentalView() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Inject
+	private RentalAgency agency;
 
 	@PostConstruct
 	public void createPartControl(Composite parent) {
@@ -73,7 +81,7 @@ public class RentalView {
 		setLabelAsDragSource (labelDateFrom);
 		setLabelAsDragSource (labelDateTo);
 		
-//		setRental (RentalCoreActivator.getAgency().getRentals().get(1));
+		setRental (agency.getRentals().get(1));
 	}
 
 	@Focus
@@ -112,6 +120,27 @@ public class RentalView {
 //			}
 //		}
 //	}
+	
+	@Inject @Optional
+	public void receiveSelection(@Named(IServiceConstants.ACTIVE_SELECTION) Rental r) {
+		if (r != null) {
+			setRental(r);
+		}
+	}
+	
+	@Inject @Optional
+	public void receiveSelection(@Named(IServiceConstants.ACTIVE_SELECTION) Object[] array) {
+		
+		if (array == null) {
+			return;
+		}
+		
+		for (Object o : array) {
+			if (o instanceof Rental) {
+				setRental((Rental)o);
+			}
+		}
+	}
 	
 	public void setLabelAsDragSource(final Label label) {
 		
